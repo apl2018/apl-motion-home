@@ -237,6 +237,7 @@
       <div class="biz-card reveal"><div class="ico">🛒</div><h3>APL Store</h3><p><span data-ko>전문 장비 연구·개발 및 스포츠 제품 판매.</span><span data-en>Sports equipment R&D and product sales.</span></p></div>
       <div class="biz-card reveal"><div class="ico">📱</div><h3>APL Motion</h3><p><span data-ko>AI 기반 2D 코칭 · 3D 정밀 모션 분석 앱.</span><span data-en>AI-powered 2D coaching & 3D precision motion analysis app.</span></p></div>
       <div class="biz-card reveal"><div class="ico">🚐</div><h3>APV</h3><p><span data-ko>Athletic Performance Van — 현장 방문 퍼포먼스 케어.</span><span data-en>Athletic Performance Van — on-site performance care.</span></p></div>
+      <div class="biz-card reveal"><div class="ico">🏃</div><h3>RUNHAUS</h3><p><span data-ko>국내 최대 규모 러닝센터 — 러닝 레슨·HYROX·리커버리.</span><span data-en>Korea's largest running center — lessons, HYROX & recovery.</span></p></div>
     </div>
   </div>
 </section>
@@ -309,6 +310,7 @@
       <div class="center-card reveal"><div class="pin">📍 <span data-ko>인천 청라</span><span data-en>Incheon</span></div><h3>APL <span data-ko>청라</span><span data-en>Cheongna</span></h3><p><span data-ko>전문 선수 트레이닝 & 재활.</span><span data-en>Elite training & rehab.</span></p></div>
       <div class="center-card reveal"><div class="pin">📍 <span data-ko>울산</span><span data-en>Ulsan</span></div><h3>APL <span data-ko>울산</span><span data-en>Ulsan</span></h3><p><span data-ko>전문 선수 트레이닝 & 재활.</span><span data-en>Elite training & rehab.</span></p></div>
       <div class="center-card reveal"><div class="pin">📍 <span data-ko>중국 베이징</span><span data-en>Beijing, China</span></div><h3>APL <span data-ko>베이징</span><span data-en>Beijing</span></h3><p><span data-ko>해외 거점 퍼포먼스 센터.</span><span data-en>International performance center.</span></p></div>
+      <div class="center-card reveal"><div class="pin">📍 <span data-ko>경기 용인 기흥</span><span data-en>Yongin</span></div><h3>RUNHAUS</h3><p><span data-ko>국내 최대 규모 러닝센터. 러닝 레슨·HYROX·리커버리·스포츠뉴트리션.</span><span data-en>Korea's largest running center — lessons, HYROX, recovery & sports nutrition.</span></p></div>
     </div>
   </div>
 </section>
@@ -369,10 +371,11 @@
       <a class="social" id="ig2" href="#" target="_blank" rel="noopener">📷 @apl_academy</a>
       <a class="social" id="ig3" href="#" target="_blank" rel="noopener">📷 @n1_tr_hsq_</a>
       <a class="social" id="ig4" href="#" target="_blank" rel="noopener">📷 @da_specialist_</a>
+      <a class="social" id="ig5" href="#" target="_blank" rel="noopener">📷 @runhaus_offcial</a>
       <a class="social" id="cafeLink" href="#" target="_blank" rel="noopener"><span data-ko>☕ 네이버 카페</span><span data-en>☕ Naver Cafe</span></a>
     </div>
     <p class="meta reveal">
-      <span data-ko>이메일</span><span data-en>Email</span>: <a id="mailLink" href="mailto:aplspl2018@gmail.com">aplspl2018@gmail.com</a>
+      <span data-ko>이메일</span><span data-en>Email</span>: <a id="mailLink" href="mailto:apl@apl-motion.com">apl@apl-motion.com</a>
     </p>
   </div>
 </section>
@@ -402,9 +405,10 @@ const CONFIG = {
     mokdong:"https://instagram.com/apl_mokdong_",
     academy:"https://instagram.com/apl_academy",
     hsq:    "https://instagram.com/n1_tr_hsq_",
-    da:     "https://instagram.com/da_specialist_"
+    da:     "https://instagram.com/da_specialist_",
+    runhaus:"https://instagram.com/runhaus_offcial"
   },
-  email:    "aplspl2018@gmail.com"
+  email:    "apl@apl-motion.com"
 };
 /* ──────────────────────────────────────────────────────────── */
 
@@ -416,6 +420,7 @@ set("ig1",CONFIG.instagram.mokdong);
 set("ig2",CONFIG.instagram.academy);
 set("ig3",CONFIG.instagram.hsq);
 set("ig4",CONFIG.instagram.da);
+set("ig5",CONFIG.instagram.runhaus);
 document.getElementById("mailLink").href="mailto:"+CONFIG.email;
 document.getElementById("year").textContent=new Date().getFullYear();
 
@@ -424,17 +429,4 @@ const langBtn=document.getElementById("langBtn");
 function applyLang(l){
   html.lang=(l==="en")?"en":"ko";
   langBtn.textContent=(l==="en")?"한국어":"EN";
-  try{localStorage.setItem("apl_lang",html.lang);}catch(e){}
-}
-(()=>{let l="ko";try{const v=localStorage.getItem("apl_lang");if(v==="en")l="en";}catch(e){}applyLang(l);})();
-langBtn.addEventListener("click",()=>applyLang(html.lang==="en"?"ko":"en"));
-
-// 스크롤 등장 애니메이션 + 안전장치(혹시 미발동 시 1.2초 후 모두 표시)
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.08});
-const reveals=document.querySelectorAll(".reveal");
-reveals.forEach(el=>io.observe(el));
-setTimeout(()=>reveals.forEach(el=>el.classList.add("in")),1200);
-</script>
-</body>
-</html>
-         
+  try{localStorage.setItem("apl_lang",
