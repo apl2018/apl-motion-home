@@ -35,6 +35,13 @@
    - ⚠️ "보는 곳=웹(github.com), 올리는 곳=앱(GitHub Desktop)". 웹에선 커밋만 보이고 업로드는 앱에서 함.
 5. 1~2분 뒤 apl-motion.com 에서 **Ctrl+Shift+R**(강력 새로고침)로 확인.
 
+
+## ⚠️ index.html 편집 주의 (중요)
+- 이 파일은 한때 로고 base64 내장으로 200KB·초장문 라인이었고, 그 상태에서 편집 도구가 **파일 끝(스크립트·닫는태그)을 반복적으로 잘랐음**. 그 결과 JS가 깨져 모든 .reveal 섹션이 안 보이는(모바일 검은화면) 사고가 두 번 발생.
+- 현재는 **로고를 assets/ 외부파일로 환원해 ~30KB로 경량화**했고 `.reveal`도 JS 없이 보이게 안전화함.
+- 향후 편집 후 **반드시 검증**: `grep -c "</html>" index.html`(=1), `grep -c "</script>"`(=1), JS 문법검사. 끝이 잘렸으면 스크립트 꼬리를 다시 붙일 것.
+- 큰 편집은 한 번에 전체 재작성(bash/python)으로 처리하는 게 안전.
+
 ## 🛠 파일 구성
 - `index.html` — 홈페이지 본체(단일 파일). **로고가 base64로 내장**되어 어디서 열어도 보임. 별도 폴더 불필요.
 - `assets/` — 원본 로고 PNG(APL 마크/워드마크/스타, 흰색·검정) 보관용. index.html은 여기에 의존하지 않음(편집·재가공 시 사용).
@@ -90,3 +97,4 @@ TXT   @     v=spf1 include:spf.improvmx.com ~all
 - 2026-06-18 (3차·배포): GitHub 저장소 생성·Pages 배포, 가비아 DNS 연결, 커스텀 도메인 apl-motion.com 연결, ImprovMX 무료 이메일 포워딩 구성, Apple 조직 등록 신청 완료. (※ 배포 중 index.html 끝부분이 잘렸던 것 복구함 — 스크립트 누락 시 .reveal 섹션이 안 보이니 주의.)
 - 2026-06-19 (4차): 섹션 제목 '대표 트레이너'→'설립자', 소제목 '두 공동대표가'→'두 설립자가'. 인스타 3개 끝에 `_` 추가(apl_mokdong_/n1_tr_hsq_/da_specialist_). 주소(서울 양천구 목동) 연락처·푸터에서 완전 삭제.
 - 2026-06-19 (5차): RUNHAUS 추가 — 사업영역 카드(6번째, 🏃 러닝센터)·센터 카드(7번째, 경기 용인 기흥)·인스타 칩 @runhaus_offcial. 연락처/CONFIG 이메일을 apl@apl-motion.com 으로 변경.
+- 2026-06-19 (6차): 로고를 base64 내장 → **assets/ 외부파일 방식으로 환원**(파일 30KB로 경량화, 잘림 근본원인 제거). `.reveal`을 기본 표시+`html.js` 게이트로 변경(JS 실패해도 검은화면 방지). 사업영역 카드에 링크 추가(엘리트→인스타2, Academy→인스타, Store→네이버스토어, Motion→앱실행, RUNHAUS→인스타). 브랜드↔APL Motion 사이에 **APV 섹션** 추가(pptx 반영). 이메일 표시 apl@apl-motion.com.
