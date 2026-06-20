@@ -63,7 +63,9 @@
 - **설립자(섹션 제목 "설립자")**: 함상규(㈜GPL 대표·Co-founder) / 김양수(㈜APL 대표·Co-founder).
   약력 원본 = 업로드한 「2025 APL 회사소개서.pdf」.
 - **센터 6곳**(개별 나열): 목동(서울)·용인·용인2호·청라(인천)·울산·베이징.
-- **사업영역 5개**: 엘리트 트레이닝 / APL Academy / APL Store / APL Motion / APV.
+- **사업영역 6개**(카드 링크 포함): 엘리트 트레이닝 / APL Academy / APL Store / APL Motion / APV / RUNHAUS.
+- **APV 섹션**: 흰색 로고 + 트럭 사진 + 트레이닝·매뉴얼테라피·현장출장(크라이오 삭제됨).
+- **종목 랩 순서**: GPL → SPL → BPL → TPL.
 - 주소(서울 양천구 목동)는 사용자 요청으로 **삭제됨**(연락처엔 이메일만, 푸터엔 회사명만).
 
 ## ⚖️ 폰트·디자인 라이선스 (법적 안전)
@@ -98,3 +100,4 @@ TXT   @     v=spf1 include:spf.improvmx.com ~all
 - 2026-06-19 (4차): 섹션 제목 '대표 트레이너'→'설립자', 소제목 '두 공동대표가'→'두 설립자가'. 인스타 3개 끝에 `_` 추가(apl_mokdong_/n1_tr_hsq_/da_specialist_). 주소(서울 양천구 목동) 연락처·푸터에서 완전 삭제.
 - 2026-06-19 (5차): RUNHAUS 추가 — 사업영역 카드(6번째, 🏃 러닝센터)·센터 카드(7번째, 경기 용인 기흥)·인스타 칩 @runhaus_offcial. 연락처/CONFIG 이메일을 apl@apl-motion.com 으로 변경.
 - 2026-06-19 (6차): 로고를 base64 내장 → **assets/ 외부파일 방식으로 환원**(파일 30KB로 경량화, 잘림 근본원인 제거). `.reveal`을 기본 표시+`html.js` 게이트로 변경(JS 실패해도 검은화면 방지). 사업영역 카드에 링크 추가(엘리트→인스타2, Academy→인스타, Store→네이버스토어, Motion→앱실행, RUNHAUS→인스타). 브랜드↔APL Motion 사이에 **APV 섹션** 추가(pptx 반영). 이메일 표시 apl@apl-motion.com.
+- 2026-06-19 (7차): APV 섹션에 **APV 로고(흰색)** + **퍼포먼스 밴 트럭 사진** 추가(assets/apv_logo_white.png, assets/apv_truck.jpg). APV 내용에서 '크라이오케어 리커버리' 항목 삭제. 종목 랩 순서 **GPL→SPL**로 변경. (로고는 _sources/APV_APL_Logo_A.ai를 gs로 래스터화 후 흰색 반전, 트럭사진은 APV소개서 pptx 추출.)
